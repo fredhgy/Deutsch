@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "xingrongci.c"
+#include "dingguanci.c"
+#include "budingguanci.c"
+
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 void menu()
 {
@@ -10,15 +14,17 @@ void menu()
 	printf("资料收集，软件制作:何广宇\n");
 	printf("网站:www.heguangyu.net\n");
 	printf("邮箱:me@heguangyu.net\n");
-	 
+	printf("==================================\n"); 
 }
 
 void main()
 {
 	int n;
 	menu();
+	contain1();
 	printf("请输入代码:"); 
 	scanf("%d",&n);
+	menu(); 
 	while(n)
 	{
 		switch(n)
@@ -33,21 +39,36 @@ void main()
 				break;
 		}
 		getch();
-		menu();
+		contain1();
 		printf("继续使用请输入序号，退出请输0:\n");
 		scanf("%d",&n);
+		if(n!=0)
+		{
+			menu();
+			contain1(); 
+		}
 	}
 	printf("谢谢使用，欢迎指正改进\n");
-	printf("项目托管地址:github.com/fredhgy\n");
+	printf("项目托管地址:github.com/fredhgy/Deutsch\n");
 	system("pause");
 }
 
-void guancidaici()
+void contain1() //主菜单 
+{
+	printf("==================================\n");
+	printf("冠词代词：1\n");
+	printf("形容词：2\n");
+	printf("==================================\n");
+}
+
+void guancidaici() //冠词代词选项 
 {
 	int a;
-	//system("cls");
+	menu();
+	contain2();
 	printf("请输入代码1:"); 
 	scanf("%d",&a);
+	menu(); 
 	switch(a)
 		{
 			case 1:
@@ -59,22 +80,11 @@ void guancidaici()
 		}
 }
 
-void xingrongci()
+void contain2() //冠词代词菜单 
 {
-	printf("adj");
+	printf("==================================\n");
+	printf("定冠词：1\n");
+	printf("不定冠词：2\n");
+	printf("==================================\n");
 }
 
-void dingguanci()
-{
-	printf("|     格    | 阳性 | 中性 | 阴性 | 复数 |\n");
-	printf("| --------- | ---- | ---- | ---- | ---- |\n");
-	printf("| 第一格 N. | der  | das  | die  | die  |\n");
-	printf("| 第二格 G. | des  | des  | der  | der  |\n");
-	printf("| 第三格 D. | dem  | dem  | der  | den  |\n");
-	printf("| 第四格 A. | den  | das  | die  | die  |\n");
-}
-
-void budingguanci()
-{
-	printf("222");
-}
