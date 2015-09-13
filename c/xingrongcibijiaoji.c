@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 
-void xingrongci()
+void xingrongcibijiaoji()
 {
-	printf("adj\n");
+	printf("±È½Ï¼¶");
 }
