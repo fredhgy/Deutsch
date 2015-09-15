@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "caidan.c"
+
 #include "dingguancibiange.c" //形容词定冠词变格 
 #include "dingguanci.c"			//定冠词 
 #include "budingguanci.c"		//不定冠词 
 #include "budingguancibiange.c"		//形容词不定冠词变格
 #include "lingguancibiange.c"  //形容词零冠词变格
 #include "xingrongcibijiaoji.c"  //形容词比较级 
+#include "foudingguanci.c"	//否定冠词 
+#include "budingdaici.c" //不定代词
+#include "foudingdaici.c" //否定代词 
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 void menu()
@@ -28,16 +33,23 @@ void main()
 	printf("请输入代码:"); 
 	scanf("%d",&n);
 	menu(); 
-	while(n)
+	while(n) //主菜单选项 
 	{
 		switch(n)
 		{
 			case 1:
-				guancidaici();
+				guanci();
 				break;
 			case 2:
 				xingrongci();
 				break;
+			case 3:
+				daici();
+			case 666:
+				system("wget http://www.baidu.com");
+				system("pause");
+				menu();
+				break;  
 			default:
 				break;
 		}
@@ -61,15 +73,7 @@ void main()
 	system("pause");
 }
 
-void contain1() //主菜单 
-{
-	printf("==================================\n");
-	printf("冠词代词：1\n");
-	printf("形容词：2\n");
-	printf("==================================\n");
-}
-
-void guancidaici() //冠词代词选项 
+void guanci() //冠词选项 
 {
 	int n;
 	menu();
@@ -85,15 +89,10 @@ void guancidaici() //冠词代词选项
 			case 2:
 				budingguanci();
 				break;
+			case 3:
+				foudingguanci(); 
+				break;
 		}
-}
-
-void contain2() //冠词代词菜单 
-{
-	printf("==================================\n");
-	printf("定冠词：1\n");
-	printf("不定冠词：2\n");
-	printf("==================================\n");
 }
 
 void xingrongci() //形容词选项 
@@ -121,12 +120,28 @@ void xingrongci() //形容词选项
 		}
 }
 
-void contain3() //形容词菜单
+void daici() //代词选项 
 {
-	printf("==================================\n");
-	printf("定冠词后变格：1\n");
-	printf("不定冠词后变格：2\n");
-	printf("零冠词后变格：3\n");
-	printf("形容词比较级：4\n"); 
-	printf("==================================\n");
+	int n;
+	menu();
+	contain4();
+	printf("请输入代码:"); 
+	scanf("%d",&n);
+	menu(); 
+	switch(n)
+		{
+			case 1:
+				budingdaici();
+				break;
+			case 2:
+				foudingdaici();
+				break;
+		/*	case 3:
+				zhishidaici();
+				break;	
+			case 4:
+				wuzhudaici();
+				break; */
+		}
 } 
+
