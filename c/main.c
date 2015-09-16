@@ -45,11 +45,11 @@ void main()
 				break;
 			case 3:
 				daici();
+				break;
 			case 666:
-				system("wget http://www.baidu.com");
-				system("pause");
-				menu();
-				break;  
+				system("start updatetool.exe");
+				exit(0);
+				break;
 			default:
 				break;
 		}

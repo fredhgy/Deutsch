@@ -7,7 +7,7 @@ void contain1() //主菜单
 	printf("冠词：1\n");
 	printf("形容词：2\n");
 	printf("代词:3\n");
-	printf("下载测试：666\n");
+	printf("更新程序：666\n");
 	printf("==================================\n");
 }
 
